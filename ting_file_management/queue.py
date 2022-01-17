@@ -9,7 +9,7 @@ class Queue:
         pass
 
     def dequeue(self):
-	    pass
+        pass
 
     def search(self, index):
-	    pass
+        pass
