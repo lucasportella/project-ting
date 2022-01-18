@@ -24,3 +24,18 @@ class Queue:
             if dict["nome_do_arquivo"] == path_file:
                 return False
         return True
+
+    def exists_word(self, word):
+        result = []
+        for dict in self.data:
+            file_search = {
+                "palavra": word,
+                "arquivo": dict["nome_do_arquivo"],
+                "ocorrencias": []
+            }
+            for index, line in enumerate(dict["linhas_do_arquivo"]):
+                if word in line:
+                    file_search["ocorrencias"].append({"linha": index + 1})
+            if len(file_search["ocorrencias"]) > 0:
+                result.append(file_search)
+        return result
