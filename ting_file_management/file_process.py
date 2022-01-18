@@ -18,8 +18,11 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
-    pass
+    if len(instance) > 0:
+        removed = instance.dequeue()
+        sys.stdout.write(f'Arquivo {removed["nome_do_arquivo"]} removido com sucesso\n')
+    else:
+        sys.stdout.write('Não há elementos\n')
 
 
 def file_metadata(instance, position):
@@ -28,4 +31,5 @@ def file_metadata(instance, position):
 
 
 project = Queue()
-print(process("statics/arquivo_teste.txt", project))
+process("statics/arquivo_teste.txt", project)
+remove(project)
