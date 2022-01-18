@@ -31,11 +31,29 @@ class Queue:
             file_search = {
                 "palavra": word,
                 "arquivo": dict["nome_do_arquivo"],
-                "ocorrencias": []
+                "ocorrencias": [],
             }
             for index, line in enumerate(dict["linhas_do_arquivo"]):
                 if word in line:
                     file_search["ocorrencias"].append({"linha": index + 1})
+            if len(file_search["ocorrencias"]) > 0:
+                result.append(file_search)
+        return result
+
+    def search_by_word(self, word):
+        lower_word = word.lower()
+        result = []
+        for dict in self.data:
+            file_search = {
+                "palavra": lower_word,
+                "arquivo": dict["nome_do_arquivo"],
+                "ocorrencias": [],
+            }
+            for index, line in enumerate(dict["linhas_do_arquivo"]):
+                if lower_word in line.lower():
+                    file_search["ocorrencias"].append(
+                        {"linha": index + 1, "conteudo": line}
+                    )
             if len(file_search["ocorrencias"]) > 0:
                 result.append(file_search)
         return result

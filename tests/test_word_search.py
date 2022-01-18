@@ -40,17 +40,17 @@ def test_validar_funcao_exists_word_sem_palavra_existente(capsys):
     assert word == []
 
 
-# def test_validar_search_by_word_com_sucesso(capsys):
-#     project = Queue()
-#     process("statics/nome_pedro.txt", project)
-#     word = search_by_word("pedro", project)
-#     out, err = capsys.readouterr()
-#     assert word == text_search_by_word
+def test_validar_search_by_word_com_sucesso(capsys):
+    project = Queue()
+    process("statics/nome_pedro.txt", project)
+    word = search_by_word("pedro", project)
+    out, err = capsys.readouterr()
+    assert word == text_search_by_word
 
 
-# def test_validar_search_by_word_com_palavra_inexistente(capsys):
-#     project = Queue()
-#     process("statics/nome_pedro.txt", project)
-#     word = search_by_word("Ratinho", project)
-#     out, err = capsys.readouterr()
-#     assert word == []
+def test_validar_search_by_word_com_palavra_inexistente(capsys):
+    project = Queue()
+    process("statics/nome_pedro.txt", project)
+    word = search_by_word("Ratinho", project)
+    out, err = capsys.readouterr()
+    assert word == []
