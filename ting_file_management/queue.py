@@ -15,13 +15,12 @@ class Queue:
         if 0 <= index < len(self.data):
             return self.data[index]
         raise IndexError
-    
+
     def peek(self):
         return self.data[-1]
-    
+
     def search_by_file(self, path_file):
         for dict in self.data:
             if dict["nome_do_arquivo"] == path_file:
                 return False
         return True
-
